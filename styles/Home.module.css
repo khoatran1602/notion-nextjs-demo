@@ -1,28 +1,52 @@
+/* Overall container adjustments for better spacing and responsiveness */
 .container {
   padding: 0 2rem;
+  max-width: 1200px; /* Set a max-width for larger screens */
+  margin: 0 auto; /* Center the container */
 }
 
+/* Add this to your Home.module.css */
+.markdownImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%; /* Ensure large images are not overflowing */
+}
+
+/* Main content area improvements for spacing and readability */
 .main {
   padding: 4rem;
+  text-align: center; /* Center the content for a more modern look */
 }
 
+/* Styling for individual cards */
 .card {
   margin: 1rem 0;
   padding: 1.5rem;
   border: 1px solid #eaeaea;
   border-radius: 10px;
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+  transition: transform 200ms, box-shadow 200ms; /* Smooth transition for hover effects */
 }
-.card:hover{
+
+/* Hover effect to make the cards more interactive */
+.card:hover {
   border-color: blue;
+  transform: translateY(-5px); /* Slightly raise the card */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increase shadow to give a "lifting" effect */
 }
-.card a{
+
+/* Styling for links within cards */
+.card a {
   text-decoration: none;
   cursor: pointer;
   border: 2px solid transparent;
   transition: border-color 200ms;
 }
-.card a::before{
+
+/* Pseudo-element for additional visual effects (if needed) */
+.card a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -31,4 +55,13 @@
   right: 0;
 }
 
-
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .container,
+  .main {
+    padding: 1rem; /* Reduce padding on smaller screens */
+  }
+  .card {
+    margin: 1rem auto; /* Adjust margin for better mobile layout */
+  }
+}

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link';
 import { getAllPublished } from '../lib/notion';
 import styles from '../styles/Home.module.css'
+import React from 'react';
 export default function Home({posts}) {
   if(!posts) return <h1>No posts</h1>
   return (
